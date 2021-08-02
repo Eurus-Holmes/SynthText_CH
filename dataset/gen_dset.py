@@ -4,14 +4,14 @@ import os
 import numpy as np
 from PIL import Image
 import h5py as hp
-import turibolt as bolt
+
 
 IMG_DIR="bg_img"
 depth = hp.File("depth.h5","r")
 seg_mask = hp.File("seg.h5","r")
 seg = seg_mask[u'mask']
 
-# output_path = os.path.join(bolt.ARTIFACT_DIR, "dset.h5")
+
 dset = hp.File("/data/dset.h5","w")
 dImage = dset.create_group("image")
 dDepth = dset.create_group("depth")
